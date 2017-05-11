@@ -22,25 +22,25 @@ The output:
 
 1. Basic AWK Syntax:
 
-  The basic syntax of you basic AWK one liner is as follows:
-  `$>program | awk '{print $1}'`
-  This will take the output from "program" and pass it to the AWK interpreter as the input. The `'{}'` block surrounded by single quotes is an AWK "operation block" that will be executed on every line that is passed through the `|`, `print $1` uses the "print" function in AWK to print the built in variable $1.
+	The basic syntax of you basic AWK one liner is as follows:
+	`$>program | awk '{print $1}'`
+	This will take the output from "program" and pass it to the AWK interpreter as the input. The `'{}'` block surrounded by single quotes is an AWK "operation block" that will be executed on every line that is passed through the `|`, `print $1` uses the "print" function in AWK to print the built in variable $1.
 
 	Running this on our `df -h` output would get us this:
 	```	
-		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
-		Filesystem
-		rotfs
-		tmpfs
-		none
-		none
-		none
+	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
+	Filesystem
+	rotfs
+	tmpfs
+	none
+	none
+	none
 	```
 	You can also use operators to determine whether the  block should run:
 
 	```
-		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
-		Filesystem
+	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
+	Filesystem
 	```
 
 
