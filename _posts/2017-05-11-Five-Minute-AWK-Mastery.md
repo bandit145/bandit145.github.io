@@ -22,7 +22,7 @@ The output:
 
 1. Basic AWK Syntax:
 
-	The basic syntax of you basic AWK one liner is as follows:
+	The syntax of your basic AWK one liner is as follows:
 
 	`$>program | awk '{print $1}'`
 	
