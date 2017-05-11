@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Five Minute AWK Mastery"
+date: 2017-05-11 00:30
+categories: awk linux scripting
+---
 I see alot of people thinking AWK is a hard skill to pickup. This is not the case, to effectively use AWK you only need to know a few things.
 
 For the below examples I will be using `df -h` as the data source
