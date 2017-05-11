@@ -21,21 +21,22 @@ The output:
   This will take the output from "program" and pass it to the AWK interpreter as the input. The `'{}'` block surrounded by single quotes is an AWK "operation block" that will be executed on every line that is passed through the `|`, `print $1` uses the "print" function in AWK to print the built in variable $1.
 
 	Running this on our `df -h` output would get us this:
-	
-	```
-	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
+		
+		```
+		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
+		Filesystem
+		rootfs
+		tmpfs
+		none
+		none
+		none
+		``` 
+	You can also use operators to determine whether the  block should run:
+		
+		```
+		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
 	Filesystem
-	rootfs
-	tmpfs
-	none
-	none
-	none
-	``` 
-You can also use operators to determine whether the  block should run:
-	```
-	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
-Filesystem
-	```
+		```
 
 
 
