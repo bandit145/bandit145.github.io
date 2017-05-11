@@ -1,0 +1,9 @@
+name: Solar Theme
+url: https://bandit145.github.io
+description: I know enough to know that I have no idea what I'm doing
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+gems: [jekyll-paginate]
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
