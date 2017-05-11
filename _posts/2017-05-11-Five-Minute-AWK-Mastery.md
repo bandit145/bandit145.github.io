@@ -23,19 +23,19 @@ The output:
 	Running this on our `df -h` output would get us this:
 		
 		```
-		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
-		Filesystem
-		rootfs
-		tmpfs
-		none
-		none
-		none
+			pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
+			Filesystem
+			rootfs
+			tmpfs
+			none
+			none
+			none
 		``` 
 	You can also use operators to determine whether the  block should run:
 		
 		```
-		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
-	Filesystem
+			pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
+		Filesystem
 		```
 
 
