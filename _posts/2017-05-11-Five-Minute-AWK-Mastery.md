@@ -5,13 +5,13 @@ For the below examples I will be using `df -h` as the data source
 The output:
 
 ```
-  pbove@PHIL:/mnt/c/Users/pbove$ df -h
-  Filesystem      Size  Used Avail Use% Mounted on
-  rootfs          112G  106G  5.2G  96% /
-  tmpfs           112G  106G  5.2G  96% /run
-  none            112G  106G  5.2G  96% /run/lock
-  none            112G  106G  5.2G  96% /run/shm
-  none            112G  106G  5.2G  96% /run/user
+ pbove@PHIL:/mnt/c/Users/pbove$ df -h
+ Filesystem      Size  Used Avail Use% Mounted on
+ rootfs          112G  106G  5.2G  96% /
+ tmpfs           112G  106G  5.2G  96% /run
+ none            112G  106G  5.2G  96% /run/lock
+ none            112G  106G  5.2G  96% /run/shm
+ none            112G  106G  5.2G  96% /run/user
 ```
 
 1. Basic AWK Syntax:
@@ -22,23 +22,24 @@ The output:
 
 	Running this on our `df -h` output would get us this:
 	```	
-	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
-	Filesystem
-	rootfs
-	tmpfs
-	none
-	none
-	none
+		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '{print $1}'
+		Filesystem
+		rotfs
+		tmpfs
+		none
+		none
+		none
 	```
 	You can also use operators to determine whether the  block should run:
 
 	```
-	pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
-	Filesystem
+		pbove@PHIL:/mnt/c/Users/pbove$ df -h | awk '$1 == "Filesystem" {print $1}'
+		Filesystem
 	```
 
 
 2. AWK Built-in Variables:
+
 	As you may have guessed from the previous outputs `$1` in AWK refers to the first field in the current line, there is a `$d` for every field in a line. An AWK field is by default delimited by one tab or space.
 
 
@@ -46,13 +47,13 @@ The output:
 
 	NR is the amount of records read.
 	```
-		df -h | awk 'NR==2 {print $5}'
-		96%
+	df -h | awk 'NR==2 {print $5}'
+	96%
 	```
 	FNR is the amount of records read in the current file/input.
 	```
-		df -h | awk 'NR==2 {print $5}'
-		96%
+	df -h | awk 'NR==2 {print $5}'
+	96%
 	```
 The difference between the NR and FNR variable do not matter when you are taking one input "file" from the pipe, however you need to be careful if you pull in multiple files because NR will keep counting while FNR resets per file.
 
