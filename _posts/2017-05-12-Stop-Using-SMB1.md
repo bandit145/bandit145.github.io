@@ -6,7 +6,7 @@ categories: security windows smb powershell
 ---
 The NHS (National Health Service) in the U.K. has suffered a major ransomeware attack affecting a large number of hospitals in the U.K. The attacker used <a href=https://technet.microsoft.com/en-us/library/security/ms17-010.aspx>this</a> (patched) exploit.
 
-This got me wondering about SMB1 and I was checked my homelab Windows Server 2012R2 file server and was surprised to see SMB1 enabled, it turns out SMB1 is still enabled by default.... There are cases where you have some legacy thing that only supports SMB1 but that's the exception. So, How do you disable SMB1 in Windows Server 2012+?
+This got me wondering about SMB1, I checked my homelab Windows Server 2012R2 file server and was surprised to see SMB1 enabled. It turns out SMB1 is still enabled by default.... There are cases where you have some legacy thing that only supports SMB1 but that's the exception. So, How do you disable SMB1 in Windows Server 2012+?
 
 1. Check your SMB Server Configuration:
 	```
@@ -95,9 +95,11 @@ Run it like this:
 ./script.ps1 -Computers computer1,computer2,etc.
 ```
 
-If you are using ansible you might want to make sure the role is removed when you run your initial playbook against it. You can do so like this:
+If you are using ansible you might want to make sure the role is removed when you run your initial playbook against the server. You can do so like this:
 
 ```
 - name: Remove FS-SMB1 feature
   win_feature: name: "FS-SMB1" state: absent restart: yes
 ```
+
+Thats it! SMB1 should be off or removed unless you have very specific needs that require it for some reason.
