@@ -4,7 +4,7 @@ title: "Stop Using SMB1"
 date: 2017-05-12 16:30
 categories: security windows smb powershell
 ---
-The NHS (National Health Service) in the U.K. has suffered a major ransomeware attack affecting a large number of hospitals in the U.K. The attacker used <a href=https://technet.microsoft.com/en-us/library/security/ms17-010.aspx>this</a> (patched) exploit.
+The NHS (National Health Service) in the U.K. has suffered a major ransomeware attack affecting a large number of hospitals in the U.K. The attacker used [this](https://technet.microsoft.com/en-us/library/security/ms17-010.aspx)(patched) exploit.
 
 This got me wondering about SMB1, I checked my homelab Windows Server 2012R2 file server and was surprised to see SMB1 enabled. It turns out SMB1 is still enabled by default.... There are cases where you have some legacy thing that only supports SMB1 but that's the exception. So, How do you disable SMB1 in Windows Server 2012+?
 
